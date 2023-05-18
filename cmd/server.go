@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"net"
+
+	logic "github.com/czmatejt9/simple_online_gomoku/internal"
 )
 
 type Message struct {
@@ -90,6 +92,10 @@ func main() {
 			fmt.Println("Message from ", msg.from, ":", string(msg.payload))
 		}
 	}()
+
+	a := logic.NewEmptyGame()
+	fmt.Printf("%+v\n", a)
+	// TODO: implement game logic and remove this later
 
 	s.Start()
 }
